@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Четыре лапы</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        body {
+            width: min(calc(100vh*0.6), 100vw);
+        }
+
+        .wrapper {
+        }
+
+        .container {
+            background-color: white;
+            color: black;
+            font-family: sans-serif;
+            margin: 0;
+            height: calc(100vh - 62px);
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding-bottom: 10px 0;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+        .header > .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            flex-grow: 2;
+            width: 100%;
+        }
+        .header img {
+            height: 60%;
+        }
+        .header img.text {
+            height: 40%;
+            padding-left: 5px;
+        }
+
+        .caption {
+            padding: 10px 0;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: solid 2px #E6E6E6;
+        }
+
+        .card {
+            background: linear-gradient(to right, #F66423, #F89D4A);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            margin-top: 20px;
+        }
+
+        .card > .logo {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        .card > .logo img {
+            filter: opacity(0.9);
+            height: 100%;
+        }
+        .card > .logo img.text {
+            filter: grayscale(1) brightness(2);
+            height: 80%;
+            padding-left: 10px;
+        }
+
+        .card > .balance {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        .card > .balance > .bonuses {
+        }
+        .card > .balance > .bonuses > .title {
+            font-size: 70%;
+            filter: opacity(0.8);
+        }
+        .card > .balance > .bonuses > #bonuses {
+            font-size: 200%;
+            filter: opacity(1);
+        }
+        .card > .balance > .stamps {
+        }
+        .card > .balance > .stamps > .title {
+            font-size: 70%;
+            filter: opacity(0.8);
+        }
+        .card > .balance > .stamps > #stamps {
+            font-size: 200%;
+            filter: opacity(1);
+        }
+
+        .card > .barcode {
+            background-color: white;
+            border-radius: 5px;
+            padding: 0.5px;
+            text-align: center;
+            height: 84px;
+        }
+        .card > .barcode > svg {
+            height: 60px;
+        }
+
+        .card > #card-no {
+            padding-top: 10px;
+            text-align: center;
+            font-size: 80%;
+            filter: opacity(0.8);
+        }
+
+
+        .replace {
+            padding: 20px 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .replace > .text {
+            padding-bottom: 10px;
+        }
+        .replace > .button {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            background-color: #FF712D;
+            border-radius: 5px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            font-weight: bold;
+            color: #CC7C51;
+        }
+        .info > .text {
+            width: 50%;
+            text-align: center;
+            border-bottom: solid 2px #E6E6E6;
+            padding: 10px 0;
+        }
+        .info > .active {
+            border-bottom: solid 3px #C6794C;
+        }
+
+        .stat {
+        }
+        .stat > .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: solid 1px #C6794C;
+        }
+        .stat > .row > .name {
+            padding-left: 10px;
+        }
+        .stat > .row > .value {
+            font-weight: bold;
+            padding-right: 10px;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 60px;
+            background-color: #FEFEFE;
+            border-top: solid 2px #E6E6E6;
+        }
+        .footer > img {
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="header">
+                <img class="back" src="./Четыре лапы_files/back.png">
+                <div class="logo">
+                    <img class="img" src="./Четыре лапы_files/logo-img.png">
+                    <img class="text" src="./Четыре лапы_files/logo-text.png">
+                </div>
+            </div>
+
+            <div class="caption">
+                Моя бонусная карта
+            </div>
+
+            <div class="card">
+                <div class="logo">
+                    <img class="img" src="./Четыре лапы_files/logo-img.png">
+                    <img class="text" src="./Четыре лапы_files/logo-text.png">
+                </div>
+                <div class="balance">
+                    <div class="bonuses">
+                        <div class="title">Всего бонусов</div>
+                        <div id="bonuses">594.51</div>
+                    </div>
+                    <div class="stamps">
+                        <div class="title">Марок накоплено</div>
+                        <div id="stamps">5</div>
+                    </div>
+                </div>
+                <div class="barcode" id="barcodeContainer">
+                    <div style='padding-top:4px;'text-align: center;'>
+  <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+  <img alt='Barcode Generator TEC-IT'
+       src='https://barcode.tec-it.com/barcode.ashx?data=2600027334041&code=&multiplebarcodes=true&translate-esc=true&unit=Px&dpi=72&imagetype=Svg&rotation=0&color=%23000000&bgcolor=%23ffffff&codepage=Default&qunit=Mm&quiet=0&hidehrt=True&modulewidth=1.5'/>
+</div>
+<div style='padding-top:0px; text-align:center; font-size:15px; font-family: Source Sans Pro, Arial, sans-serif;'>
+</div></g></svg>
+                </div>
+                <div id="card-no">2600027334041</div>
+            </div>
+
+            <div class="replace">
+                <div class="text">
+                    Вам выдана виртуальная бонусная карта.
+                    У Вас уже есть наша карта? Укажите ее номер тут:
+                </div>
+                <div class="button">ЗАМЕНИТЬ</div>
+            </div>
+
+            <div class="info">
+                <div class="text active">МОИ ЛИЧНЫЕ БОНУСЫ</div>
+                <div class="text">О ПРОГРАММЕ</div>
+            </div>
+
+            <div class="stat">
+                <div class="row">
+                    <div class="name">Размер бонуса</div>
+                    <div class="value" id="cashback">4%</div>
+                </div>
+                <div class="row">
+                    <div class="name">Всего начислено бонусов</div>
+                    <div class="value" id="refill">677</div>
+                </div>
+                <div class="row">
+                    <div class="name">Всего списано бонусов</div>
+                    <div class="value" id="withdrawal">655</div>
+                </div>
+                <div class="row">
+                    <div class="name">До следующего порога осталось ₽</div>
+                    <div class="value" id="level-up-remain">3205.00</div>
+                </div>
+                <div class="row">
+                    <div class="name">Марок накоплено</div>
+                    <div class="value">2</div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <img src="./Четыре лапы_files/tab1.png">
+            <img src="./Четыре лапы_files/tab2.png">
+            <img src="./Четыре лапы_files/tab3.png">
+            <img src="./Четыре лапы_files/tab4.png">
+            <img src="./Четыре лапы_files/tab5.png">
+        </footer></div>
+</body></html>
